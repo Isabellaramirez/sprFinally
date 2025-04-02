@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".homeContratistaActivity"
+
+        >
+
+    <ImageView
+            android:id="@+id/buscarlogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/buscar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/frameContainer" app:layout_constraintHorizontal_bias="0.991"
+            app:layout_constraintVertical_bias="0.214"/>
+    <ImageButton
+            android:id="@+id/btn_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/menu"
+            android:contentDescription="menu desplegable"
+            android:background="@color/white"
+            android:backgroundTint="@color/transparente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+    />
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/frameContainer"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.126"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0">
+
+
+        <TextView
+                android:text="Bienvenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/texto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.092"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textStyle="bold" app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:text="Materializamos tus sueños y solucionamos tus problemas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lema"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textStyle="italic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.818"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+            android:layout_width="278dp"
+            android:layout_height="47dp"
+            android:text="Buscar servicios"
+            android:gravity="center"
+            android:id="@+id/buscarServicio"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/frameContainer"
+            app:layout_constraintStart_toEndOf="@+id/btn_menu" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.575"/>
+    <TextView
+            android:text="Servicios Recomendados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/serviciosrecomendados"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+    <ImageView
+            android:layout_width="97dp"
+            android:layout_height="80dp" app:srcCompat="@drawable/clases" android:id="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintVertical_bias="0.588"/>
+    <ImageView
+            android:layout_width="109dp"
+            android:layout_height="64dp" app:srcCompat="@drawable/limpieza" android:id="@+id/imageView3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.59"/>
+    <ImageView
+            android:layout_width="93dp"
+            android:layout_height="60dp" app:srcCompat="@drawable/manicurista" android:id="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.886"
+            app:layout_constraintVertical_bias="0.593"/>
+    <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.105"
+            app:layout_constraintVertical_bias="0.67"/>
+    <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintVertical_bias="0.67"/>
+    <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.878"
+            app:layout_constraintVertical_bias="0.677"/>
+    <ImageView
+            android:id="@+id/imagenhogar"
+            android:src="@drawable/hogar"
+            android:layout_width="105dp"
+            android:layout_height="63dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintVertical_bias="0.351"/>
+    <ImageView
+            android:id="@+id/belleza"
+            android:layout_width="105dp"
+            android:layout_height="63dp"
+            android:src="@drawable/belleza"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintVertical_bias="0.351"/>
+    <ImageView
+            android:id="@+id/educacion"
+            android:layout_width="105dp"
+            android:layout_height="63dp"
+            android:src="@drawable/educacion"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.921"
+            app:layout_constraintVertical_bias="0.351"/>
+    <Button
+            android:id="@+id/btnhogar"
+            android:text="Hogar"
+            android:textStyle="bold"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.054"
+            app:layout_constraintVertical_bias="0.44"/>
+    <Button
+            android:id="@+id/btnbelleza"
+            android:text="Belleza"
+            android:textStyle="bold"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintVertical_bias="0.436"/>
+    <Button
+            android:id="@+id/btneducacion"
+            android:text="Educación"
+            android:textStyle="bold"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.44"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.965"/>
+    <TextView
+            android:id="@+id/textocategorias"
+            android:text="Algunas de nuestras categorias"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.607"
+            app:layout_constraintVertical_bias="0.262"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

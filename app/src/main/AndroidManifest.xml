@@ -10,13 +10,19 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/Theme.SPRapp"
+            android:theme="@style/Theme.AppSRP"
             tools:targetApi="31">
         <activity
-                android:name=".ui.PrestadorActivity"
+                android:name=".homeContratistaActivity"
                 android:exported="false"/>
         <activity
-                android:name=".ui.ServiciosActivity"
+                android:name=".registroContratista"
+                android:exported="false"/>
+        <activity
+                android:name=".rol"
+                android:exported="false"/>
+        <activity
+                android:name=".registro"
                 android:exported="false"/>
         <activity
                 android:name=".MainActivity"

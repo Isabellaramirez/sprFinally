@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+>
+
+    <!-- ImageView at the top -->
+
+    <!-- Mis servicios TextView -->
+    <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:src="@drawable/usuario"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.047"/>
+
+    <!-- Chats TextView -->
+    <TextView
+            android:id="@+id/tvServicios"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="Mis servicios"
+            android:gravity="center"
+            android:background="@color/moradobutton"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintVertical_bias="0.0"/>
+
+    <!-- Configuración TextView -->
+    <TextView
+            android:id="@+id/tvChats"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="Chats"
+            android:gravity="center"
+            android:background="@color/moradobutton"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvServicios"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="2dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintVertical_bias="0.0"/>
+
+    <!-- Ayuda TextView -->
+    <TextView
+            android:id="@+id/tvConfiguracion"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="Configuración"
+            android:gravity="center"
+            android:background="@color/moradobutton"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvChats"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="2dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.497" app:layout_constraintVertical_bias="0.0"/>
+    <TextView
+            android:id="@+id/tvAyuda"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="Ayuda"
+            android:gravity="center"
+            android:background="@color/moradobutton"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvConfiguracion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="2dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.497" app:layout_constraintVertical_bias="0.0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

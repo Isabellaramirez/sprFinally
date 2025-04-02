@@ -1,3 +1,5 @@
-<resources>
-    <string name="app_name">SPRapp</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="app_name">appSRP</string>
+
 </resources>

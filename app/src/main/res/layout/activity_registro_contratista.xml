@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".registroContratista">
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Registro Contratista"
+              android:layout_gravity="center"
+              android:textSize="25sp"/>
+
+    <ImageView android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:src="@drawable/addphoto"
+               android:layout_gravity="center"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Cedula"
+              android:minHeight="48dp"
+              android:inputType="number"
+              android:gravity="center"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Nombres"
+              android:minHeight="48dp"
+              android:inputType="text"
+              android:gravity="center"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="51dp"
+              android:hint="Apellidos"
+              android:minHeight="48dp"
+              android:inputType="text"
+              android:gravity="center"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Cedular"
+              android:minHeight="48dp"
+              android:inputType="number"
+              android:gravity="center"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Direccion"
+              android:minHeight="48dp"
+              android:inputType="text"
+              android:gravity="center"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Correo"
+              android:minHeight="48dp"
+              android:inputType="text"
+              android:gravity="center"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Fecha de nacimiento"
+              android:minHeight="48dp"
+              android:inputType="date"
+              android:gravity="center"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Contraseña"
+              android:minHeight="48dp"
+              android:inputType="textPassword"
+              android:gravity="center"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Confirmar contraseña"
+              android:minHeight="48dp"
+              android:inputType="text"
+              android:gravity="center"/>
+
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Registrarme"/>
+
+
+
+</LinearLayout>
