@@ -5,7 +5,11 @@ plugins {
 
 android {
     namespace = "com.example.sprapp"
-    compileSdk = 34
+    compileSdk = 35
+
+    buildFeatures {
+        viewBinding = true  // ¡Así se habilita en Kotlin DSL!
+    }
 
     defaultConfig {
         applicationId = "com.example.sprapp"

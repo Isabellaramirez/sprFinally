@@ -6,22 +6,21 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:context="com.example.appsrp.activity.activityrol"
         android:orientation="vertical"
-        android:background="@drawable/degradado_fondo"
-        tools:context=".rol">
+        android:gravity="center">
 
-    <Spinner
-            android:id="@+id/rol"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
+    <Button
+            android:id="@+id/btnContratista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:layout_gravity="center"
-            android:background="@color/material_dynamic_primary80"
+            android:text="Soy Contratista"
+            android:layout_marginBottom="16dp"/>
 
-    />
-
-
+    <Button
+            android:id="@+id/btnPrestador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Soy Prestador"/>
 
 </LinearLayout>

@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".registro">
+        tools:context="com.example.srpapp.activity.RegistroActivity">
 
 
     <TextView android:layout_width="wrap_content"
@@ -92,50 +92,72 @@
               android:id="@+id/editText4" app:layout_constraintBottom_toBottomOf="parent"
               app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.582"
               app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
-    <EditText android:layout_width="match_parent"
+
+
+    <EditText
+            android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:hint="Correo"
               android:minHeight="48dp"
               android:inputType="text"
               android:gravity="center"
-              app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-              app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.653"
-              android:id="@+id/editText5" app:layout_constraintEnd_toEndOf="parent"/>
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintVertical_bias="0.653"
+              android:id="@+id/correo"
+              app:layout_constraintEnd_toEndOf="parent"/>
+
+
     <EditText android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:hint="Fecha de nacimiento"
               android:minHeight="48dp"
               android:inputType="date"
               android:gravity="center"
-              android:id="@+id/editText2" app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintVertical_bias="0.723" app:layout_constraintEnd_toEndOf="parent"/>
+              android:id="@+id/fechaNacimiento"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintVertical_bias="0.723"
+              app:layout_constraintEnd_toEndOf="parent"/>
+
     <EditText android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:hint="Contraseña"
               android:minHeight="48dp"
               android:inputType="textPassword"
               android:gravity="center"
-              android:id="@+id/editText3" app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintTop_toTopOf="@+id/foto" app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintVertical_bias="0.777" app:layout_constraintEnd_toEndOf="parent"/>
+              android:id="@+id/contraseña"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintTop_toTopOf="@+id/foto"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintVertical_bias="0.777"
+              app:layout_constraintEnd_toEndOf="parent"/>
+
     <EditText android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:hint="Confirmar contraseña"
               android:minHeight="48dp"
               android:inputType="text"
               android:gravity="center"
-              android:id="@+id/editText" app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.863"
-              app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+              android:id="@+id/confirmarcontraseña"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintVertical_bias="0.863"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"/>
     <Button
             android:text="Registrarme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button2"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.957"
+            android:id="@+id/btnregistrarme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.957"
     />
 
 
