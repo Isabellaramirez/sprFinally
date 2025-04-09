@@ -1,34 +1,30 @@
-package com.example.appsrp
+package com.example.appsrp.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.appsrp.R.id.tv_registrar
+import com.example.sprapp.R
+import com.example.srpapp.activity.RegistroActivity
 
-class MainActivity : AppCompatActivity() {
-    lateinit var tvRegistrar: TextView
-
+class activityrol : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-
-        tvRegistrar = findViewById(tv_registrar)
-
-        tvRegistrar.setOnClickListener{
-            val intent = Intent(this, rol::class.java)
-            startActivity(intent)
-        }
+        setContentView(R.layout.activity_activityrol)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
 
+        findViewById<Button>(R.id.btnContratista).setOnClickListener{
+            startActivity(Intent(this, RegistroActivity::class.java))
+            finish()
         }
     }
 }
