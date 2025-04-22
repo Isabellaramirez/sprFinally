@@ -1,10 +1,20 @@
 package main.models.sercat
 // en kotlin no se puede usar un enum con espacios
 
-enum class trabajos{
-    Limpieza,
+enum class Trabajos {
+    // Limpieza
+    AseoGeneral,
+    LimpiezaVidrios,
+
+    // Hogar
+    Carpinteria,
+    Plomeria,
+
+    // Mascotas
     PaseadorCanino,
-    carpintaria,
-    limpieza,
-    peluqueroHombre
+    BañoMascotas,
+
+    // Belleza
+    PeluqueroHombre,
+    PeluqueroMujer
 }

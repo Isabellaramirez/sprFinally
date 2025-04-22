@@ -8,7 +8,7 @@ class LogicaServicio {
 
     fun crearServicio(
         id: String,
-        nombreServicio: trabajos,
+        nombreServicio: Trabajos,
         descripcionServicio: String,
         cedulaPrestador: String,
         categoria: EnumCategoria
@@ -21,7 +21,7 @@ class LogicaServicio {
     fun actualizarServicio(
         id: String,
         cedulaPrestador: String? = null,
-        nombreServicio: trabajos? = null,
+        nombreServicio: Trabajos? = null,
         descripcionServicio: String? = null,
         categoria: EnumCategoria? = null
     ): Servicios {

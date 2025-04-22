@@ -1,18 +1,20 @@
 package main.models.prestador
 
+import com.google.gson.annotations.SerializedName
 import main.models.sercat.EnumCategoria
-import main.models.sercat.trabajos
-import java.time.LocalDate
-
+import java.util.*
 data class Prestador(
-    var cedula: String,
-    var nombre: String,
-    var apellido: String,
-    var direccion: String, // Cambiado de "ciudad" a "dirección"
-    var celular: String,
-    var correo: String,
-    var fechaDeNacimiento: LocalDate,
-    var contrasena: String,
-    var categoria: EnumCategoria,
-    var servicio: trabajos
+    @SerializedName("cedula") val cedula: String,
+    @SerializedName("nombres") var nombres: String,
+    @SerializedName("apellidos") var apellidos: String,
+    @SerializedName("celular") var celular: String,
+    @SerializedName("direccion") var direccion: String,
+    @SerializedName("contrasena") var contrasena: String,
+    @SerializedName("titulos_uni") var titulosUni: String,
+    @SerializedName("descripcion") var descripcion: String,
+    @SerializedName("correo") var correo: String,
+    @SerializedName("fecha_nacimiento") var fechaNacimiento: String,
+    @SerializedName("foto") var foto: String,
+    @SerializedName("id_rol") val idRol: Int = 2,
+    @SerializedName("categoria") val categorias: List<String>
 )

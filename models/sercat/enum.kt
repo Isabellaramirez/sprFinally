@@ -3,7 +3,7 @@ package main.models.sercat
 
 enum class EnumCategoria{
 
-    limpieza,
+    Limpieza,
     Hogar,
     Mascotas,
     Seguridad,

@@ -1,14 +1,16 @@
 package main.models.contratista
 
-import java.time.LocalDate
-
+import com.google.gson.annotations.SerializedName
+import java.util.*
 data class Contratista(
-    val cedula: String,
-    var nombre: String,
-    var apellido: String,
-    var direccion: String,
-    var celular: String,
-    var correo: String,
-    var fechaDeNacimiento: LocalDate,
-    var contrasena: String
+    @SerializedName("cedula") val cedula: String,
+    @SerializedName("nombres") var nombres: String,
+    @SerializedName("apellidos") var apellidos: String,
+    @SerializedName("celular") var telefono: String,
+    @SerializedName("direccion") var direccion: String,
+    @SerializedName("correo") var correo: String,
+    @SerializedName("fecha_nacimiento") var fechaNacimiento: String,
+    @SerializedName("contraseña") var contrasena: String,
+    @SerializedName("foto") val foto: String,
+    @SerializedName("id_rol") val idRol: Int = 1 // 1 es contratista
 )

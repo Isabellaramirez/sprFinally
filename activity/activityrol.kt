@@ -8,23 +8,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.sprapp.R
+import com.example.sprapp.activity.HomeContratista
 import com.example.srpapp.activity.RegistroActivity
 
 class activityrol : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_activityrol)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val btnContratista: Button = findViewById(R.id.btnContratista)
+        val btnPrestador: Button = findViewById(R.id.btnPrestador)
+
+        btnContratista.setOnClickListener {
+            val intent = Intent(this, RegistroContratistaActivity::class.java)
+            startActivity(intent)
         }
 
-        findViewById<Button>(R.id.btnContratista).setOnClickListener{
-            startActivity(Intent(this, RegistroActivity::class.java))
-            finish()
+        btnPrestador.setOnClickListener {
+            val intent = Intent(this, RegistroActivity::class.java)
+            startActivity(intent)
         }
     }
 }

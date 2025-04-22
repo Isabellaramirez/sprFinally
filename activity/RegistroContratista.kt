@@ -6,85 +6,95 @@ import android.os.Bundle
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.appsrp.api.RetrofitInstance
+import com.example.appsrp.models.RegisterResponse
 import com.example.sprapp.R
 import com.example.sprapp.activity.HomeContratista
 import main.models.contratista.Contratista
-import main.models.contratista.LogicaContratista
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class RegistroContratista : AppCompatActivity() {
-
-    private val listaContratistas = mutableListOf<Contratista>()
+class RegistroContratistaActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_registro_contratista)
 
         val btnCrearContratista = findViewById<Button>(R.id.btnCrearContratista)
 
-        btnCrearContratista.setOnClickListener{
-            if (validarCampos()){
-                registraContratista()
+        btnCrearContratista.setOnClickListener {
+            if (validarCampos()) {
+                registrarContratista()
             }
         }
     }
 
-    private fun validarCampos():Boolean{
-
+    private fun validarCampos(): Boolean {
         val password = findViewById<EditText>(R.id.contraseña).text.toString()
         val confirPassword = findViewById<EditText>(R.id.confirmarcontraseña).text.toString()
 
-        if (password != confirPassword){
-            Toast.makeText( this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+        if (password != confirPassword) {
+            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             return false
         }
+
         return true
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun registraContratista(){
+    private fun registrarContratista() {
         try {
             val cedula = findViewById<EditText>(R.id.etCedula).text.toString()
-            val nombre = findViewById<EditText>(R.id.etNombre).text.toString()
-            val apellido = findViewById<EditText>(R.id.etApellido).text.toString()
+            val nombres = findViewById<EditText>(R.id.etNombre).text.toString()
+            val apellidos = findViewById<EditText>(R.id.etApellido).text.toString()
             val direccion = findViewById<EditText>(R.id.etDireccion).text.toString()
-            val celular = findViewById<EditText>(R.id.etCelular).text.toString()
+            val telefono = findViewById<EditText>(R.id.etCelular).text.toString()
             val correo = findViewById<EditText>(R.id.etCorreo).text.toString()
             val contrasena = findViewById<EditText>(R.id.contraseña).text.toString()
-            val fechaNacimiento = LocalDate.parse(
-                findViewById<EditText>(R.id.fechaNacimiento).text.toString(),
-                DateTimeFormatter.ISO_DATE)
-            val contratistaRegistrado = LogicaContratista.crearContratista(
+            val fechaNacimiento = findViewById<EditText>(R.id.fechaNacimiento).text.toString()
 
-                listaContratistas = listaContratistas,
+            // Foto por defecto (puedes cambiarlo si usas carga real de imágenes)
+            val foto = "default.jpg"
+
+            val contratista = Contratista(
                 cedula = cedula,
-                nombre = nombre,
-                apellido = apellido,
+                nombres = nombres,
+                apellidos = apellidos,
+                telefono = telefono,
                 direccion = direccion,
-                celular = celular,
                 correo = correo,
-                fechaDeNacimiento = fechaNacimiento,
+                fechaNacimiento = fechaNacimiento, // debe ser en formato yyyy-MM-dd
                 contrasena = contrasena,
-
+                foto = foto,
+                idRol = 1
             )
-            Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, HomeContratista::class.java))
-            finish()
-        }catch (e: Exception){
+
+            val call = RetrofitInstance.apiService.registrarContratista(contratista)
+
+            call.enqueue(object : Callback<RegisterResponse> {
+                override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
+                    if (response.isSuccessful && response.body()?.success == true) {
+                        Toast.makeText(this@RegistroContratistaActivity, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this@RegistroContratistaActivity, HomeContratista::class.java))
+                        finish()
+                    } else {
+                        Toast.makeText(
+                            this@RegistroContratistaActivity,
+                            "Error: ${response.body()?.message ?: "No se pudo registrar"}",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                    Toast.makeText(this@RegistroContratistaActivity, "Error de red: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
+
+        } catch (e: Exception) {
             Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
-
-
-
-
-
-
-
-
 }
-
-
