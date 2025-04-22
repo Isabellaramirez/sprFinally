@@ -9,6 +9,12 @@
         tools:context="activity.MainActivity">
 
     <!-- ImageView centrada horizontalmente y en la parte superior -->
+
+    <!-- Campo de Cédula -->
+
+    <!-- Campo de Contraseña -->
+
+    <!-- Botón de Iniciar Sesión -->
     <ImageView
             android:id="@+id/imageView"
             android:layout_width="200dp"
@@ -17,25 +23,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/etCedula"
-            android:layout_marginTop="32dp"/>
-
-    <!-- Campo de Cédula -->
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.145"/>
     <EditText
-            android:id="@+id/etCedula"
+            android:id="@+id/etEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:hint="CEDULA"
-            android:inputType="number"
+            android:hint="CORREO"
+            android:inputType="textEmailAddress"
             app:layout_constraintTop_toBottomOf="@id/imageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="32dp"/>
-
-    <!-- Campo de Contraseña -->
+            android:layout_marginTop="36dp" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"/>
     <EditText
             android:id="@+id/etPassword"
             android:layout_width="0dp"
@@ -43,14 +46,13 @@
             android:minHeight="48dp"
             android:hint="CONTRASEÑA"
             android:inputType="textPassword"
-            app:layout_constraintTop_toBottomOf="@id/etCedula"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"/>
-
-    <!-- Botón de Iniciar Sesión -->
+            android:layout_marginTop="16dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.535"/>
     <Button
             android:id="@+id/btnLogin"
             android:layout_width="wrap_content"

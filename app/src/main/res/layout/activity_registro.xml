@@ -1,164 +1,180 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+
+<ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="com.example.srpapp.activity.RegistroActivity">
+        android:layout_height="match_parent">
 
-
-    <TextView android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="Registro Prestador De Servicios"
-              android:layout_gravity="center"
-              android:textSize="25sp"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintTop_toTopOf="parent"
-
-              android:layout_marginTop="4dp" android:layout_marginStart="28dp"/>
-    <ImageView
-            android:id="@+id/foto"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/addphoto"
-            android:layout_gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.073"/>
-    <EditText
-            android:id="@+id/cedula"
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Cedula"
-            android:minHeight="48dp"
-            android:inputType="number"
-            android:gravity="center" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.218"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
-    <EditText
-            android:id="@+id/nombres"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombres"
-            android:minHeight="48dp"
-            android:inputType="text"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="@+id/foto"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.248"/>
-    <EditText
-            android:id="@+id/apellidos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Apellidos"
-            android:minHeight="48dp"
-            android:inputType="text"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.371" app:layout_constraintStart_toStartOf="parent"/>
-    <EditText
-            android:id="@+id/celular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Celular"
-            android:minHeight="48dp"
-            android:inputType="number"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.442"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
-    <EditText
-            android:id="@+id/direccion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Direccion"
-            android:minHeight="48dp"
-            android:inputType="text"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.512" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"/>
-    <EditText android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="Descripcion"
-              android:minHeight="48dp"
-              android:inputType="text"
-              android:gravity="center"
-              android:id="@+id/editText4" app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.582"
-              app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registro Prestador De Servicios"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+        <ImageView
+                android:id="@+id/foto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/addphoto"
+                android:layout_marginBottom="16dp"/>
+
+        <EditText
+                android:id="@+id/cedula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cédula"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <EditText
+                android:id="@+id/nombres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombres"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <EditText
+                android:id="@+id/apellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellidos"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <EditText
+                android:id="@+id/celular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Celular"
+                android:inputType="phone"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <EditText
+                android:id="@+id/direccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Dirección"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <EditText
+                android:id="@+id/descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <EditText
+                android:id="@+id/correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <EditText
+                android:id="@+id/fechaNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fecha de nacimiento"
+                android:inputType="date"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <EditText
+                android:id="@+id/titulosUni"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="¿Tiene títulos universitarios?"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <!-- Categoría -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categoría"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+        <Spinner
+                android:id="@+id/spinnerCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+        <!-- Servicios -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Servicios que ofrece"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
 
 
-    <EditText
-            android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="Correo"
-              android:minHeight="48dp"
-              android:inputType="text"
-              android:gravity="center"
-              app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintTop_toTopOf="parent"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintVertical_bias="0.653"
-              android:id="@+id/correo"
-              app:layout_constraintEnd_toEndOf="parent"/>
+        <LinearLayout
+                android:id="@+id/layoutServicios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp" />
 
 
-    <EditText android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="Fecha de nacimiento"
-              android:minHeight="48dp"
-              android:inputType="date"
-              android:gravity="center"
-              android:id="@+id/fechaNacimiento"
-              app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintTop_toTopOf="parent"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintVertical_bias="0.723"
-              app:layout_constraintEnd_toEndOf="parent"/>
 
-    <EditText android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="Contraseña"
-              android:minHeight="48dp"
-              android:inputType="textPassword"
-              android:gravity="center"
-              android:id="@+id/contraseña"
-              app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintTop_toTopOf="@+id/foto"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintVertical_bias="0.777"
-              app:layout_constraintEnd_toEndOf="parent"/>
+        <EditText
+                android:id="@+id/contraseña"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
 
-    <EditText android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="Confirmar contraseña"
-              android:minHeight="48dp"
-              android:inputType="text"
-              android:gravity="center"
-              android:id="@+id/confirmarcontraseña"
-              app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintTop_toTopOf="parent"
-              app:layout_constraintVertical_bias="0.863"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintEnd_toEndOf="parent"/>
-    <Button
-            android:text="Registrarme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnregistrarme"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintVertical_bias="0.957"
-    />
+        <EditText
+                android:id="@+id/confirmarcontraseña"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirmar contraseña"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
 
+        <Button
+                android:id="@+id/btnregistrarme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrarme"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
+
