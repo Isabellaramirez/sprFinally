@@ -3,7 +3,6 @@ package com.example.sprapp.activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -69,9 +68,9 @@ class MainActivity : AppCompatActivity() {
     private fun login(correo: String, contrasena: String) {
         val viewModel = LoginViewModel()
 
-        viewModel.iniciarSesion(correo, contrasena, this) { success, rol ->
+        viewModel.iniciarSesion(correo, contrasena, this) { success, rolId ->
             if (success) {
-                val rolTipo = RolTipo.fromId(rol)
+                val rolTipo = RolTipo.fromId(rolId)
 
                 when (rolTipo) {
                     RolTipo.CONTRATISTA -> {
@@ -84,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     else -> {
                         Toast.makeText(this,
-                            "Error: Rol ${rol ?: "null"} no reconocido",
+                            "Error: Rol ${rolId ?: "null"} no reconocido",
                             Toast.LENGTH_LONG).show()
                     }
                 }
