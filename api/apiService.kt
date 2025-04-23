@@ -27,7 +27,7 @@ interface ApiService {
         @Part("fecha_nacimiento") fechaNacimiento: RequestBody,
         @Part("id_rol") idRol: RequestBody,
         @Part foto: MultipartBody.Part?,
-        @Part categorias: List<MultipartBody.Part>
+        @Part("categoria") categoria: RequestBody
     ): Call<RegisterResponse>
 
     @POST("/signin")

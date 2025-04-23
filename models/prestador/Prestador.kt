@@ -1,8 +1,7 @@
 package main.models.prestador
 
 import com.google.gson.annotations.SerializedName
-import main.models.sercat.EnumCategoria
-import java.util.*
+
 data class Prestador(
     @SerializedName("cedula") val cedula: String,
     @SerializedName("nombres") var nombres: String,
@@ -16,5 +15,5 @@ data class Prestador(
     @SerializedName("fecha_nacimiento") var fechaNacimiento: String,
     @SerializedName("foto") var foto: String,
     @SerializedName("id_rol") val idRol: Int = 2,
-    @SerializedName("categoria") val categorias: List<String>
+    @SerializedName("categoria") val categorias: String
 )

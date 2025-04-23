@@ -13,17 +13,16 @@ import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.appsrp.CategoriaMapper
 import com.example.appsrp.activity.HomePrestador
 import com.example.appsrp.api.RetrofitInstance
 import com.example.appsrp.getMultipartFromUri
 import com.example.appsrp.models.RegisterResponse
-import com.example.appsrp.toPart
 import com.example.appsrp.toRequestBody
 import com.example.sprapp.R
 import main.models.prestador.Prestador
 import main.models.sercat.EnumCategoria
 import main.models.sercat.Trabajos
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -164,15 +163,15 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     private fun crearPrestadorDesdeFormulario(foto: String): Prestador {
-        // Obtener servicios seleccionados
+        val categoriaSeleccionada = EnumCategoria.values()[spinnerCategoria.selectedItemPosition].name
         val serviciosSeleccionados = mutableListOf<String>()
-
-        val categoriaSeleccionada = EnumCategoria.values()[spinnerCategoria.selectedItemPosition]
 
         for (i in 0 until layoutServicios.childCount) {
             val checkBox = layoutServicios.getChildAt(i) as CheckBox
             if (checkBox.isChecked) {
-                serviciosSeleccionados.add("${categoriaSeleccionada.name}:${checkBox.text}")
+                val servicioNombre = checkBox.text.toString()
+                val idServicio = CategoriaMapper.obtenerIdServicio(servicioNombre)
+                serviciosSeleccionados.add(idServicio)
             }
         }
 
@@ -181,6 +180,8 @@ class RegistroActivity : AppCompatActivity() {
             throw IllegalArgumentException("Servicios requeridos")
         }
 
+        // Unimos todos los IDs de servicios con comas
+        val categoriasString = serviciosSeleccionados.joinToString(",")
 
         return Prestador(
             nombres = findViewById<EditText>(R.id.nombres).text.toString(),
@@ -195,21 +196,14 @@ class RegistroActivity : AppCompatActivity() {
             descripcion = findViewById<EditText>(R.id.descripcion).text.toString(),
             titulosUni = findViewById<EditText>(R.id.titulosUni).text.toString(),
             foto = foto,
-            categorias = serviciosSeleccionados // Añadimos las categorías
+            categorias = categoriasString // Ahora es un String con IDs separados por comas
         )
     }
 
     private fun registrarPrestador(prestador: Prestador, imageUri: Uri?) {
-        // Convertir datos a RequestBody
         val fotoPart = imageUri?.let { this.getMultipartFromUri("foto", it) }
 
 
-        // Convertir categorías
-        val categoriaParts = prestador.categorias.map {
-            it.toRequestBody("text/plain".toMediaTypeOrNull())
-        }.map {
-            MultipartBody.Part.createFormData("categoria", null, it)
-        }
 
         val call = RetrofitInstance.apiService.registrarPrestador(
             cedula = prestador.cedula.toRequestBody(),
@@ -224,13 +218,18 @@ class RegistroActivity : AppCompatActivity() {
             fechaNacimiento = prestador.fechaNacimiento.toRequestBody(),
             idRol = prestador.idRol.toString().toRequestBody(),
             foto = fotoPart,
-            categorias = categoriaParts
+            categoria = prestador.categorias.toRequestBody()
         )
 
         call.enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@RegistroActivity, "¡Registro exitoso!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@RegistroActivity, HomePrestador::class.java).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    }
+                    startActivity(intent)
+                    finish()
                 } else {
                     val error = response.errorBody()?.string()
                     Log.e("RegistroActivity", "Error en registro: $error")
